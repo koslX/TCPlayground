@@ -94,10 +94,13 @@ public class Main {
         // Prints "Hello, World" to the terminal window. topcoder
         /*String[] guns = new String[] {};  eabcatyu topcoder
         System.out.println(match( guns, "||| ||| "));*/
-        Substitute subs = new Substitute();
-        AlphabetOrderDiv1 alfa = new AlphabetOrderDiv1();
+        Cut cut = new Cut();
+
+        System.out.println( cut.getMaximum(new int [] {30, 50, 30, 50}, 350));
+        //Substitute subs = new Substitute();
+        //AlphabetOrderDiv1 alfa = new AlphabetOrderDiv1();
         //System.out.println(alfa.isOrdered(new String[] {"topcoder"}));
-        System.out.println(alfa.isOrdered(new String[] {"algorithm", "contest"}));
+        //System.out.println(alfa.isOrdered(new String[] {"algorithm", "contest"}));
         //System.out.println(subs.getValue("TRADINGFEW", "LGXWEV"));
         //System.out.println("Hello, World");
     }
