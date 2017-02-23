@@ -91,11 +91,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // Prints "Hello, World" to the terminal window.
-        /*String[] guns = new String[] {};
+        // Prints "Hello, World" to the terminal window. topcoder
+        /*String[] guns = new String[] {};  eabcatyu topcoder
         System.out.println(match( guns, "||| ||| "));*/
         Substitute subs = new Substitute();
-        System.out.println(subs.getValue("TRADINGFEW", "LGXWEV"));
-        System.out.println("Hello, World");
+        AlphabetOrderDiv1 alfa = new AlphabetOrderDiv1();
+        //System.out.println(alfa.isOrdered(new String[] {"topcoder"}));
+        System.out.println(alfa.isOrdered(new String[] {"algorithm", "contest"}));
+        //System.out.println(subs.getValue("TRADINGFEW", "LGXWEV"));
+        //System.out.println("Hello, World");
     }
 }
