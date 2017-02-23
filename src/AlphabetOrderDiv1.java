@@ -1,11 +1,14 @@
 /**
  * Created by Karol on 20/02/2017.
+ *
+ * solution for https://community.topcoder.com/stat?c=problem_statement&pm=10529
+ *
  */
 public class AlphabetOrderDiv1 {
 
     final static int ALPHABET_SIZE = (((int)'z')-((int)'a')) + 1;
 
-    private boolean[][] immediateLarger = new boolean[ALPHABET_SIZE][ALPHABET_SIZE];
+    private boolean[][] immediateLarger;
 
     private class CycleException extends Exception {
         public CycleException(String message) {
@@ -14,6 +17,8 @@ public class AlphabetOrderDiv1 {
     }
 
     private void initLarger(String[] words) {
+        immediateLarger = new boolean[ALPHABET_SIZE][ALPHABET_SIZE];
+
         for(int i = 0; i < ALPHABET_SIZE; i++) //each letter is larger or equal than itself
             immediateLarger[i][i] = true;
 
