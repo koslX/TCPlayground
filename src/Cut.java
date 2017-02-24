@@ -18,19 +18,7 @@ public class Cut {
         int pos = 0;
         for(int len : eelLengths)
             sorted[pos++] = new Integer(len);
-        Arrays.sort(sorted, new Comparator<Integer>(){
-            public int compare(Integer o1, Integer o2) {
-                int mod10_01 = ((o1 % 10)>0) ? 1 : 0;
-                int mod10_02 = ((o2 % 10)>0) ? 1 : 0;
-                if( mod10_01 == mod10_02)
-                    return o1.compareTo(o2);
-                if(mod10_01 == 0)
-                    return -1;
-                else
-                    return 1;
-
-            }
-        } );
+        Arrays.sort(sorted, Comparator.<Integer>comparingInt(a->a%10).thenComparing(a->a));
 
         int cutsRemaining = maxCuts;
         int eelPos = 0;
