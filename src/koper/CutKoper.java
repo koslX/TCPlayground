@@ -1,9 +1,11 @@
+package koper;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Cut
+public class CutKoper
 {
     final static int PERFECT_LENGTH = 10;
 
