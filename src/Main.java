@@ -95,8 +95,15 @@ public class Main {
         /*String[] guns = new String[] {};  eabcatyu topcoder
         System.out.println(match( guns, "||| ||| "));*/
         //Cut cut = new Cut();
-        ABBA abba = new ABBA();
-        System.out.println(abba.canObtain("A", "BB"));
+        //ABA abba = new ABBA();
+        YetAnotherIncredibleMachine yaim = new YetAnotherIncredibleMachine();
+        //System.out.println(yaim.countWays(new int []{1},new int [] {2},new int [] {0,3}));
+        //System.out.println(yaim.countWays(new int []{8},new int [] {2},new int [] {4, 9}));
+        //System.out.println(yaim.countWays(new int []{1,4},new int [] {3,3},new int [] {2,7}));
+        //System.out.println(yaim.countWays(new int []{4,4,4},new int [] {10,9,8},new int [] {1,100}));
+        //System.out.println(yaim.countWays(new int []{0},new int [] {1},new int [] {0}));
+        System.out.println(yaim.countWays(new int []{100, -4215, 251},new int [] {400, 10000, 2121},new int [] {5000, 2270, 8512, 6122}));
+        //System.out.println(abba.canObtain("A", "BB"));
         //System.out.println( cut.getMaximum(new int [] {30, 50, 30, 50}, 350));
         //Substitute subs = new Substitute();
         //AlphabetOrderDiv1 alfa = new AlphabetOrderDiv1();
