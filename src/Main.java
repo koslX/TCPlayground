@@ -96,13 +96,24 @@ public class Main {
         System.out.println(match( guns, "||| ||| "));*/
         //Cut cut = new Cut();
         //ABA abba = new ABBA();
-        YetAnotherIncredibleMachine yaim = new YetAnotherIncredibleMachine();
+        OthersXor oXor = new OthersXor();
+
+        System.out.println(oXor.minSum(new int []{0,0,1}));
+        System.out.println(oXor.minSum(new int []{0,0,1,1}));
+        System.out.println(oXor.minSum(new int []{70,100}));
+        System.out.println(oXor.minSum(new int []{-1,0,-1,100,36}));
+        System.out.println(oXor.minSum(new int []{0,536870912,0,536870912,0,536870912,0,536870912,0,536870912,
+                0,536870912,0,536870912,0,536870912,0,536870912,0,536870912,
+                1073741823,1073741823,1073741823,123456789,987654321,804289383}));
+        System.out.println(oXor.minSum(new int []{1287325,424244444,92759185,812358213,1000000000,825833522,749092703}));
+        System.out.println(oXor.minSum(new int []{-1, -1}));
+        //YetAnotherIncredibleMachine yaim = new YetAnotherIncredibleMachine();
         //System.out.println(yaim.countWays(new int []{1},new int [] {2},new int [] {0,3}));
         //System.out.println(yaim.countWays(new int []{8},new int [] {2},new int [] {4, 9}));
         //System.out.println(yaim.countWays(new int []{1,4},new int [] {3,3},new int [] {2,7}));
         //System.out.println(yaim.countWays(new int []{4,4,4},new int [] {10,9,8},new int [] {1,100}));
         //System.out.println(yaim.countWays(new int []{0},new int [] {1},new int [] {0}));
-        System.out.println(yaim.countWays(new int []{100, -4215, 251},new int [] {400, 10000, 2121},new int [] {5000, 2270, 8512, 6122}));
+        //System.out.println(yaim.countWays(new int []{100, -4215, 251},new int [] {400, 10000, 2121},new int [] {5000, 2270, 8512, 6122}));
         //System.out.println(abba.canObtain("A", "BB"));
         //System.out.println( cut.getMaximum(new int [] {30, 50, 30, 50}, 350));
         //Substitute subs = new Substitute();
