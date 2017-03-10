@@ -88,45 +88,4 @@ public class MovingCandies {
 
 }
 
-/*    int getReachCost(int x, int y, int[][] alreadyCalculated, String[] t) {
-
-        if(x<0 || x>= alreadyCalculated.length || y < 0 || y >= alreadyCalculated[0].length || alreadyCalculated[x][y] == Integer.MAX_VALUE-1)
-            return Integer.MAX_VALUE;
-
-
-        if(alreadyCalculated[x][y] < Integer.MAX_VALUE-1)
-            return alreadyCalculated[x][y];
-
-        alreadyCalculated[x][y] = Integer.MAX_VALUE-1;
-
-        int res = Math.min(getReachCost(x+1,y, alreadyCalculated, t), Math.min(getReachCost(x,y-1, alreadyCalculated, t),
-                Math.min(getReachCost(x-1, y, alreadyCalculated, t), getReachCost(x, y+1, alreadyCalculated, t)))) +
-                ((t[x].charAt(y) == '#')?0:1);
-
-        alreadyCalculated[x][y] = res;
-
-        return res;
-
-    }
-
-    int minMoved(String[] t) {
-        int totalCookiesCount = 0;
-        int [][] alreadyCalculated = new int [t.length][t[0].length()];
-        for( int i = 0; i < t.length; i++)
-            for( int j = 0; j <  t[0].length(); j++) {
-                alreadyCalculated[i][j] = Integer.MAX_VALUE;
-                if(t[i].charAt(j) == '#')
-                    totalCookiesCount ++;
-            }
-
-        alreadyCalculated[0][0] = (t[0].charAt(0) == '#')?0:1;
-
-        int reachCost = getReachCost(t.length -1, t[0].length() -1, alreadyCalculated, t);
-
-        if(reachCost <= totalCookiesCount)
-            return reachCost;
-        else
-            return -1;
-    }
-*/
 
