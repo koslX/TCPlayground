@@ -109,7 +109,7 @@ public class Main {
                         "##..#.#",
                         ".#....#"
                 }));
-        /*System.out.println(mCan.minMoved(new String[]
+        System.out.println(mCan.minMoved(new String[]
                 {
                         "#...###",
                         "#...#.#",
@@ -131,7 +131,7 @@ public class Main {
                         ".###.",
                         "####.",
                         "....."
-                }));/*
+                }));
         System.out.println(mCan.minMoved(new String[]
                 {
                         ".#...#.###.#",
