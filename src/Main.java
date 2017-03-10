@@ -96,7 +96,62 @@ public class Main {
         System.out.println(match( guns, "||| ||| "));*/
         //Cut cut = new Cut();
         //ABA abba = new ABBA();
-        OthersXor oXor = new OthersXor();
+        MovingCandies mCan = new MovingCandies();
+        /*System.out.println(mCan.minMoved(new String[]
+                {
+                        "##",
+                        "#."
+                }));*/
+        System.out.println(mCan.minMoved(new String[]
+                {
+                        "#...###",
+                        "#...#.#",
+                        "##..#.#",
+                        ".#....#"
+                }));
+        /*System.out.println(mCan.minMoved(new String[]
+                {
+                        "#...###",
+                        "#...#.#",
+                        "##..###",
+                        ".#....#"
+                }));
+        System.out.println(mCan.minMoved(new String[]
+                {
+                        ".#..",
+                        "##..",
+                        "..#.",
+                        "..#.",
+                        "..##",
+                        "..##"
+                }));
+        System.out.println(mCan.minMoved(new String[]
+                {
+                        ".....",
+                        ".###.",
+                        "####.",
+                        "....."
+                }));/*
+        System.out.println(mCan.minMoved(new String[]
+                {
+                        ".#...#.###.#",
+                        "#.#.##......",
+                        ".#.#......#.",
+                        "..#.......#.",
+                        "##.........."
+                }));
+        System.out.println(mCan.minMoved(new String[]
+                {
+                        "###.#########..#####",
+                        ".#######.###########"
+                }));
+        System.out.println(mCan.minMoved(new String[]
+                {
+                        "..",
+                        ".."
+                }));
+
+/*        OthersXor oXor = new OthersXor();
 
         System.out.println(oXor.minSum(new int []{0,0,1}));
         System.out.println(oXor.minSum(new int []{0,0,1,1}));
@@ -106,7 +161,7 @@ public class Main {
                 0,536870912,0,536870912,0,536870912,0,536870912,0,536870912,
                 1073741823,1073741823,1073741823,123456789,987654321,804289383}));
         System.out.println(oXor.minSum(new int []{1287325,424244444,92759185,812358213,1000000000,825833522,749092703}));
-        System.out.println(oXor.minSum(new int []{-1, -1}));
+        System.out.println(oXor.minSum(new int []{-1, -1}));*/
         //YetAnotherIncredibleMachine yaim = new YetAnotherIncredibleMachine();
         //System.out.println(yaim.countWays(new int []{1},new int [] {2},new int [] {0,3}));
         //System.out.println(yaim.countWays(new int []{8},new int [] {2},new int [] {4, 9}));
