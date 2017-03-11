@@ -46,7 +46,7 @@ public class MovingCandies {
     }
 
 
-    int minMoved(String[] t) {
+    public int minMoved(String[] t) {
         Queue<Coordinates> coordQueue = new LinkedList<Coordinates>();
         int totalCookiesCount = 0;
 

@@ -96,12 +96,15 @@ public class Main {
         System.out.println(match( guns, "||| ||| "));*/
         //Cut cut = new Cut();
         //ABA abba = new ABBA();
-        MovingCandies mCan = new MovingCandies();
-        /*System.out.println(mCan.minMoved(new String[]
+        LargestSubsequence ls = new LargestSubsequence();
+        System.out.println(ls.getLargest("test"));
+        System.out.println(ls.getLargest("aquickbrownfoxjumpsoverthelazydog"));
+        /*MovingCandies mCan = new MovingCandies();
+        System.out.println(mCan.minMoved(new String[]
                 {
                         "##",
                         "#."
-                }));*/
+                }));
         System.out.println(mCan.minMoved(new String[]
                 {
                         "#...###",
