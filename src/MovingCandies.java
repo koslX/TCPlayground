@@ -17,10 +17,10 @@ public class MovingCandies {
         public int y;
         public int stepsRemaining;
 
-        /*public Coordinates(int x, int y) {
+        public Coordinates(int x, int y) {
             this.x = x;
             this.y = y;
-        }*/
+        }
         public Coordinates(int x, int y,int stepsRemaining) {
             this.x = x;
             this.y = y;
@@ -29,19 +29,18 @@ public class MovingCandies {
         }
     }
 
-    Coordinates [] getNeighbours(Coordinates pos, int boardXsize, int boardYsize, int stepsRemaining) {
+    ArrayList<Coordinates> getNeighbours(Coordinates pos, int boardXsize, int boardYsize, int stepsRemaining) {
+        ArrayList<Coordinates> moves = new ArrayList<>();
         ArrayList<Coordinates> result = new ArrayList<>();
-        if(pos.x > 0)
-            result.add(new Coordinates(pos.x-1, pos.y, stepsRemaining));
-        if(pos.y > 0)
-            result.add(new Coordinates(pos.x, pos.y-1, stepsRemaining));
-        if(pos.x < boardXsize-1)
-            result.add(new Coordinates(pos.x+1,pos.y, stepsRemaining));
-        if(pos.y< boardYsize-1)
-            result.add(new Coordinates(pos.x,pos.y+1, stepsRemaining));
-        Coordinates [] toRet = new Coordinates[result.size()];
+        moves.add(new Coordinates(1,0));
+        moves.add(new Coordinates(0,1));
+        moves.add(new Coordinates(0,-1));
+        moves.add(new Coordinates(-1,0));
+        for( Coordinates m : moves )
+            if(pos.x+m.x > 0 && pos.x+m.x < boardXsize && pos.y+m.y > 0 && pos.y+m.y < boardYsize)
+                result.add(new Coordinates(pos.x+m.x, pos.y+ m.y, stepsRemaining));
 
-        return  result.toArray(toRet);
+        return  result;
 
     }
 
@@ -49,16 +48,18 @@ public class MovingCandies {
     public int minMoved(String[] t) {
         Queue<Coordinates> coordQueue = new LinkedList<Coordinates>();
         int totalCookiesCount = 0;
+        int boardXSize = t.length;
+        int boardYSize = t[0].length();
 
-        int [][] alreadyCalculated = new int [t.length][t[0].length()];
-        for( int i = 0; i < t.length; i++)
-            for( int j = 0; j <  t[0].length(); j++) {
-                alreadyCalculated[i][j] = Integer.MAX_VALUE;
+        int [][] curMin = new int [boardXSize][boardYSize];
+        for( int i = 0; i < boardXSize; i++)
+            for( int j = 0; j <  boardYSize; j++) {
+                curMin[i][j] = Integer.MAX_VALUE;
                 if(t[i].charAt(j) == '#')
                     totalCookiesCount++;
             }
 
-        alreadyCalculated[0][0] = (t[0].charAt(0) == '#')?0:1;
+        curMin[0][0] = (t[0].charAt(0) == '#')?0:1;
 
         coordQueue.add(new Coordinates(1,0, totalCookiesCount-1));
         coordQueue.add(new Coordinates(0,1, totalCookiesCount-1));
@@ -67,22 +68,25 @@ public class MovingCandies {
             Coordinates curr = coordQueue.remove();;
             if(curr.stepsRemaining > 0) {
 
-                Coordinates[] neighbours = getNeighbours(curr, alreadyCalculated.length, alreadyCalculated[0].length, curr.stepsRemaining - 1);
+                ArrayList<Coordinates> neighbours = getNeighbours(curr, boardXSize, boardYSize, curr.stepsRemaining - 1);
                 int min = Integer.MAX_VALUE;
-                for (Coordinates c : neighbours)
-                    min = (min - +((t[curr.x].charAt(curr.y) == '#') ? 0 : 1) > alreadyCalculated[c.x][c.y]) ? alreadyCalculated[c.x][c.y] + ((t[curr.x].charAt(curr.y) == '#') ? 0 : 1) : min;
+                for (Coordinates c : neighbours) {
+                    int cookieMod =((t[curr.x].charAt(curr.y) == '#') ? 0 : 1);
+                    min = (min - cookieMod > curMin[c.x][c.y]) ? curMin[c.x][c.y] + cookieMod : min;
+                }
 
-                alreadyCalculated[curr.x][curr.y] = min;
+
+                curMin[curr.x][curr.y] = min;
 
                 for (Coordinates c : neighbours)
-                    if (alreadyCalculated[c.x][c.y] > alreadyCalculated[curr.x][curr.y] + ((t[c.x].charAt(c.y) == '#') ? 0 : 1))
+                    if (curMin[c.x][c.y] > curMin[curr.x][curr.y] + ((t[c.x].charAt(c.y) == '#') ? 0 : 1))
                         coordQueue.add(c);
             }
 
         }
 
 
-        return ((alreadyCalculated[t.length-1][t[0].length()-1] < Integer.MAX_VALUE))?alreadyCalculated[t.length-1][t[0].length()-1]:-1;
+        return ((curMin[t.length-1][t[0].length()-1] < Integer.MAX_VALUE))?curMin[t.length-1][t[0].length()-1]:-1;
     }
 
 
