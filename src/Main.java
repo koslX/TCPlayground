@@ -96,10 +96,17 @@ public class Main {
         System.out.println(match( guns, "||| ||| "));*/
         //Cut cut = new Cut();
         //ABA abba = new ABBA();
-        LargestSubsequence ls = new LargestSubsequence();
+        SlimeXSlimesCity sxsc = new SlimeXSlimesCity();
+        System.out.println(sxsc.merge(new int []
+
+
+                {1000000000, 999999999, 999999998, 999999997}
+
+        ));
+        /*LargestSubsequence ls = new LargestSubsequence();
         System.out.println(ls.getLargest("test"));
         System.out.println(ls.getLargest("aquickbrownfoxjumpsoverthelazydog"));
-        /*MovingCandies mCan = new MovingCandies();
+        MovingCandies mCan = new MovingCandies();
         System.out.println(mCan.minMoved(new String[]
                 {
                         "##",
